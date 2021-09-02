@@ -3,6 +3,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LicoresComponent } from './components/licores/licores.component';
 import { AboutComponent } from './components/about/about.component';
 import { TragoComponent } from './components/trago/trago.component';
+import { AddComponent } from './components/add/add.component';
+import { ChangeComponent } from './components/change/change.component';
 
 
 const APP_ROUTES:Routes = [
@@ -10,6 +12,8 @@ const APP_ROUTES:Routes = [
 {path: 'about', component: AboutComponent},
 {path: 'licores', component: LicoresComponent},
 {path: 'licores/trago/:id', component: TragoComponent},
+{path: 'add', component: AddComponent},
+{path: 'licores/change/:id', component: ChangeComponent},
 {path: '**',pathMatch:'full', redirectTo:'home'}
 
 ];

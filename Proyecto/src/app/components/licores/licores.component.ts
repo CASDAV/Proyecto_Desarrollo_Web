@@ -22,6 +22,9 @@ export class LicoresComponent implements OnInit {
   ngOnInit(): void {
     this.licores = this._licoresService.getLicores();
   }
+  mod(lic:Licor):void{
+
+  }
   onDelete(lic: Licor):void{
     this.licores = this._licoresService.onDelete(lic);
     }

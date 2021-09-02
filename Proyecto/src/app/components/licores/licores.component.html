@@ -1,7 +1,7 @@
 <header>
-<h1>Licores</h1>
+<h1>Productos</h1>
 <hr>
-<a [routerLink]="['/add-p']" class="btn btn-outline-danger btn-block">Regresar</a>
+<a [routerLink]="['/add']" class="btn btn-outline-primary btn-block">Agregar Producto</a>
 <hr>
 </header>
 
@@ -15,9 +15,12 @@
         <div class="card-block">
           <h5 class="card-title">{{licor.nombre}}</h5>
           <p class="card-text">{{licor.bio}}</p>
-          <p class="card-text">{{licor.venta}}</p>
+          <p class="card-text">{{licor.precio | currency}}</p>
+          <hr>
+          <button [routerLink]="['change',i]">Modificar</button>
+          <hr>
           <button (click)="onDelete(licor)">Eliminar</button>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <hr>
 
           <a [routerLink]="['trago',i]"  class="btn btn-outline-primary btn-block">Ver mas...</a>
         

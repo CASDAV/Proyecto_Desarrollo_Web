@@ -23,4 +23,5 @@ trago:any={};
   ngOnInit(): void {
   }
 
+
 }

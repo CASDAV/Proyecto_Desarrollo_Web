@@ -1,0 +1,20 @@
+<form action="" (ngSubmit)="onSubmite()">
+    <h2>Informacion producto</h2>
+    <hr>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Nombre del producto</label>
+      <input type="text" class="form-control" name="name" placeholder="Nombre" [(ngModel)]="nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Descripcion</label>
+      <input type="text" class="form-control" name="bio" placeholder="Leve Descripcion" [(ngModel)]="bio">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Precio</label>
+        <input type="Number" class="form-control" name="precio" placeholder="Precio del producto" [(ngModel)]="precio">
+      </div>
+
+
+      <input type="submit" value="Crear">
+  </form>

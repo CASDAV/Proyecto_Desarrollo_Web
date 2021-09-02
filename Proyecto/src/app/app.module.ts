@@ -19,6 +19,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LicoresComponent } from './components/licores/licores.component';
 import { AboutComponent } from './components/about/about.component';
 import { TragoComponent } from './components/trago/trago.component';
+import { AddComponent } from './components/add/add.component';
+import { FormsModule } from '@angular/forms';
+import { ChangeComponent } from './components/change/change.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +30,14 @@ import { TragoComponent } from './components/trago/trago.component';
     HomeComponent,
     LicoresComponent,
     AboutComponent,
-    TragoComponent
+    TragoComponent,
+    AddComponent,
+    ChangeComponent
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule
   ],
   providers: [
     LicoresService

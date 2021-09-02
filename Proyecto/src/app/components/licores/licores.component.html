@@ -1,11 +1,13 @@
-<header>
+
 <h1>Productos</h1>
+<div [ngSwitch] = "tip()">
+<div *ngSwitchCase = "'admin'">
 <hr>
 <a [routerLink]="['/add']" class="btn btn-outline-primary btn-block">Agregar Producto</a>
 <hr>
-</header>
+</div>
 
-<body>
+
 <div class= "card-columns">
 
     <div class="card" *ngFor="let licor of licores; let i = index">
@@ -16,12 +18,15 @@
           <h5 class="card-title">{{licor.nombre}}</h5>
           <p class="card-text">{{licor.bio}}</p>
           <p class="card-text">{{licor.precio | currency}}</p>
+
+          <div *ngSwitchCase = "'admin'">
           <hr>
           <button [routerLink]="['change',i]">Modificar</button>
           <hr>
           <button (click)="onDelete(licor)">Eliminar</button>
           <hr>
-
+        </div>
+        
           <a [routerLink]="['trago',i]"  class="btn btn-outline-primary btn-block">Ver mas...</a>
         
         
@@ -36,7 +41,6 @@
 
 
 
+
+    
 </div>
-
-
-</body>

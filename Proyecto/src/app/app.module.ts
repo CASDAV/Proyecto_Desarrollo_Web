@@ -12,6 +12,7 @@ import { APP_ROUTING } from './app.routes';
 import { LicoresService } from './servicios/licores.service';
 
 
+
 //Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -22,6 +23,9 @@ import { TragoComponent } from './components/trago/trago.component';
 import { AddComponent } from './components/add/add.component';
 import { FormsModule } from '@angular/forms';
 import { ChangeComponent } from './components/change/change.component';
+import { LogComponent } from './components/log/log.component';
+import { SesionComponent } from './components/sesion/sesion.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { ChangeComponent } from './components/change/change.component';
     AboutComponent,
     TragoComponent,
     AddComponent,
-    ChangeComponent
+    ChangeComponent,
+    LogComponent,
+    SesionComponent
   ],
   imports: [
     BrowserModule,

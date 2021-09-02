@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LicoresService } from '../../servicios/licores.service';
+import {Usuario} from '../../servicios/usuario';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { LicoresService } from '../../servicios/licores.service';
   ]
 })
 export class TragoComponent implements OnInit {
-
+us = new Usuario();
 trago:any={};
 
   constructor(private activateRoute: ActivatedRoute,
@@ -22,6 +23,10 @@ trago:any={};
 
   ngOnInit(): void {
   }
+  tip(){
+    this.us = this._licoresService.getUsuario();
+    return this.us.tipo;
+    }
 
 
 }

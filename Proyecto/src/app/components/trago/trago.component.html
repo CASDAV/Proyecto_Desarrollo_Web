@@ -12,14 +12,22 @@
 
 </div>
 
-<div class="col-md-8">
+<div class="col-md-8" [ngSwitch] = "tip()">
     <h3>{{trago.nombre}}</h3>
     <hr>
     <p>{{trago.bio}}</p> 
     <hr>
     <h2>{{trago.precio | currency}}</h2>
 
-    
+    <div *ngSwitchCase = "'usuario'">
+    <a [routerLink]="['/']" class="btn btn-outline-danger btn-block">Comprar</a>
+   </div>
+   <div *ngSwitchCase = "'admin'">
+    <a [routerLink]="['/']" class="btn btn-outline-danger btn-block">Comprar</a>
+   </div>
+
+
 </div>
+
 
 </div>

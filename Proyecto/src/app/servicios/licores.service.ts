@@ -1,30 +1,47 @@
 import{Injectable} from '@angular/core';
-import { LicoresComponent } from '../components/licores/licores.component';
 import {Licor} from './product';
+import {Usuario} from './usuario';
 
 @Injectable()
 export class LicoresService {
+us = new Usuario();
+
+
+  private usuarios:Usuario[] = [
+    {
+      nombre:"David",
+      apellido:"f",
+      email:"david@gmail.com",
+      cont:"123",
+      tipo:"admin"
+    },
+    {
+      nombre:"Dan",
+      apellido:"f",
+      email:"dan@gmail.com",
+      cont:"1",
+      tipo:"usuario"
+    }
+  ];
+
   private licores:Licor[] = [
   {
     nombre: "Cerveza Poker",
     bio: "La mejor",
     img: "assets/img/poker.png",
-    precio:3000,
-
+    precio:3000
   },
   {
     nombre: "Cerveza Aguila",
     bio: "La mejor",
     img: "assets/img/aguila.png",
-    precio: 3000,
-
+    precio: 3000
   },
   {
     nombre: "Cerveza Corona",
     bio: "La mejor",
     img: "assets/img/corona.png",
-    precio:5000,
-
+    precio:5000
   }
 ];
 
@@ -48,6 +65,37 @@ this.licores.unshift(lic);
       return this.licores;
       }
 
+      getUsuarios(){
+        return this.usuarios;
+      }
+      getUsuario(){
+        return this.us;
+      }
+      verificar(email:string,pass:string){
+     
+        let x = this.usuarios.find(y => y.email == email );
+        
+     if(x?.cont == pass ){
+      this.us = x;
+return this.us;
+         
+     }
+     else{
+       return null;
+     }
+
+      }
+      joinUsuario(Usu: Usuario){
+        this.us.email = Usu.email;
+        this.us.nombre = Usu.nombre;
+        this.us.apellido = Usu.apellido;
+        this.us.tipo = Usu.tipo;
+        
+      }
+      addU(usua:Usuario){
+        this.usuarios.unshift(usua);
+        this.joinUsuario(usua);
+      }
 }
 
 

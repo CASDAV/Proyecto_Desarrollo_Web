@@ -5,6 +5,9 @@ import { AboutComponent } from './components/about/about.component';
 import { TragoComponent } from './components/trago/trago.component';
 import { AddComponent } from './components/add/add.component';
 import { ChangeComponent } from './components/change/change.component';
+import { SesionComponent } from './components/sesion/sesion.component';
+import { LogComponent } from './components/log/log.component';
+
 
 
 const APP_ROUTES:Routes = [
@@ -14,6 +17,8 @@ const APP_ROUTES:Routes = [
 {path: 'licores/trago/:id', component: TragoComponent},
 {path: 'add', component: AddComponent},
 {path: 'licores/change/:id', component: ChangeComponent},
+{path: 'sesion', component: SesionComponent},
+{path: 'log', component: LogComponent},
 {path: '**',pathMatch:'full', redirectTo:'home'}
 
 ];

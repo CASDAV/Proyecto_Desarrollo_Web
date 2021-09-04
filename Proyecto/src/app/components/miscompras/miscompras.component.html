@@ -1,0 +1,7 @@
+<h1>Mis Compras</h1>
+
+<div class="container">
+    <div class="list-group" *ngFor="let compra of compras; let i = index">
+        <a [routerLink]="['']" class="list-group-item list-group-item-action">{{compra.nombre}}</a>
+    </div> 
+</div>

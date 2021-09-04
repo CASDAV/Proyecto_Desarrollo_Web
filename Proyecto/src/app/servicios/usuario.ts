@@ -1,3 +1,5 @@
+import {Licor} from './product'
+
 export class Usuario{
     
     nombre: string='';
@@ -6,6 +8,6 @@ export class Usuario{
     cont: string='';
     tipo:string="invitado";
 
-
+    compras: Licor[]=[];
 
 }

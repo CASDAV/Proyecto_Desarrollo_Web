@@ -20,14 +20,14 @@
 
 
       <div *ngSwitchCase = "'usuario'">
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" > Bienvenido {{us.nombre}}</a>
+        <li class="nav-item" routerLinkActive="active" [routerLink]="['perfil']">
+          <a class="nav-link" > {{us.nombre}}</a>
         </li>
       </div>
 
       <div *ngSwitchCase = "'admin'">
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" > Bienvenido {{us.nombre}}</a>
+          <a class="nav-link" > {{us.nombre}}</a>
         </li>
       </div>
 

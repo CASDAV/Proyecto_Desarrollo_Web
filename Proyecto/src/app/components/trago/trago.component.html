@@ -20,10 +20,7 @@
     <h2>{{trago.precio | currency}}</h2>
 
     <div *ngSwitchCase = "'usuario'">
-    <a [routerLink]="['/']" class="btn btn-outline-danger btn-block">Comprar</a>
-   </div>
-   <div *ngSwitchCase = "'admin'">
-    <a [routerLink]="['/']" class="btn btn-outline-danger btn-block">Comprar</a>
+    <a [routerLink]="['/licores']" class="btn btn-outline-danger btn-block" (click) = "realCompra()" >Comprar</a>
    </div>
 
 

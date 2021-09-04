@@ -7,8 +7,8 @@ import { AddComponent } from './components/add/add.component';
 import { ChangeComponent } from './components/change/change.component';
 import { SesionComponent } from './components/sesion/sesion.component';
 import { LogComponent } from './components/log/log.component';
-
-
+import { PerfilComponent } from './components/perfil/perfil.component';
+import {MiscomprasComponent} from './components/miscompras/miscompras.component'
 
 const APP_ROUTES:Routes = [
 {path: 'home', component: HomeComponent},
@@ -19,6 +19,8 @@ const APP_ROUTES:Routes = [
 {path: 'licores/change/:id', component: ChangeComponent},
 {path: 'sesion', component: SesionComponent},
 {path: 'log', component: LogComponent},
+{path: 'perfil', component: PerfilComponent},
+{path: 'miscompras', component: MiscomprasComponent},
 {path: '**',pathMatch:'full', redirectTo:'home'}
 
 ];

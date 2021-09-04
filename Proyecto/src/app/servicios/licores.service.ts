@@ -1,11 +1,12 @@
 import{Injectable} from '@angular/core';
 import {Licor} from './product';
 import {Usuario} from './usuario';
+import {Orden} from './orden'
 
 @Injectable()
 export class LicoresService {
-us = new Usuario();
-
+  us = new Usuario();
+  registro: Orden[] = [];
 
   private usuarios:Usuario[] = [
     {
@@ -13,14 +14,16 @@ us = new Usuario();
       apellido:"f",
       email:"david@gmail.com",
       cont:"123",
-      tipo:"admin"
+      tipo:"admin",
+      compras:[]
     },
     {
       nombre:"Dan",
       apellido:"f",
       email:"dan@gmail.com",
       cont:"1",
-      tipo:"usuario"
+      tipo:"usuario",
+      compras:[]
     }
   ];
 
@@ -51,14 +54,13 @@ us = new Usuario();
     constructor(){}
 
     getLicores(){
-      
         return this.licores;
     }
     getLicor(idx: number){
       return this.licores[idx];
     }
     addP(lic:Licor){
-this.licores.unshift(lic);
+      this.licores.unshift(lic);
     }
     onDelete(lic: Licor){
       this.licores = this.licores.filter(x => x.nombre != lic.nombre);
@@ -75,14 +77,13 @@ this.licores.unshift(lic);
      
         let x = this.usuarios.find(y => y.email == email );
         
-     if(x?.cont == pass ){
-      this.us = x;
-return this.us;
-         
-     }
-     else{
-       return null;
-     }
+        if(x?.cont == pass ){
+          this.us = x;
+          return this.us;   
+        }
+        else{
+         return null;
+        }
 
       }
       joinUsuario(Usu: Usuario){
@@ -96,6 +97,18 @@ return this.us;
         this.usuarios.unshift(usua);
         this.joinUsuario(usua);
       }
+      
+      comprarProducto(lic: Licor, copia: Orden){
+        
+        this.us.compras.push(lic);
+        this.registro.push(copia);
+        console.log(this.us.compras);
+        console.log(this.registro); 
+        
+      }
+      getCompras(){
+        return this.us.compras;
+    }
 }
 
 

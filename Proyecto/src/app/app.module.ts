@@ -25,6 +25,8 @@ import { FormsModule } from '@angular/forms';
 import { ChangeComponent } from './components/change/change.component';
 import { LogComponent } from './components/log/log.component';
 import { SesionComponent } from './components/sesion/sesion.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { MiscomprasComponent } from './components/miscompras/miscompras.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { SesionComponent } from './components/sesion/sesion.component';
     AddComponent,
     ChangeComponent,
     LogComponent,
-    SesionComponent
+    SesionComponent,
+    PerfilComponent,
+    MiscomprasComponent
   ],
   imports: [
     BrowserModule,

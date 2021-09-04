@@ -9,6 +9,8 @@ import { SesionComponent } from './components/sesion/sesion.component';
 import { LogComponent } from './components/log/log.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import {MiscomprasComponent} from './components/miscompras/miscompras.component'
+import { DetalleComponent } from './components/detalle/detalle.component';
+import { NoencontradaComponent } from './components/noencontrada/noencontrada.component';
 
 const APP_ROUTES:Routes = [
 {path: 'home', component: HomeComponent},
@@ -21,7 +23,8 @@ const APP_ROUTES:Routes = [
 {path: 'log', component: LogComponent},
 {path: 'perfil', component: PerfilComponent},
 {path: 'miscompras', component: MiscomprasComponent},
-{path: '**',pathMatch:'full', redirectTo:'home'}
+{path: 'miscompras/detalle/:id', component: DetalleComponent},
+{path: '**',pathMatch:'full', component: NoencontradaComponent}
 
 ];
 

@@ -102,13 +102,16 @@ export class LicoresService {
         
         this.us.compras.push(lic);
         this.registro.push(copia);
-        console.log(this.us.compras);
-        console.log(this.registro); 
         
       }
+
       getCompras(){
         return this.us.compras;
-    }
+      }
+
+      getCompra(idx: number){
+        return this.us.compras[idx];
+      }
 }
 
 

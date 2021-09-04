@@ -2,6 +2,6 @@
 
 <div class="container">
     <div class="list-group" *ngFor="let compra of compras; let i = index">
-        <a [routerLink]="['']" class="list-group-item list-group-item-action">{{compra.nombre}}</a>
+        <a [routerLink]="['detalle', i]" class="list-group-item list-group-item-action btn btn-outline-primary btn-block">{{compra.nombre}}</a>
     </div> 
 </div>

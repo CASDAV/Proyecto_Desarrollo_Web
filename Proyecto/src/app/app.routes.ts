@@ -26,7 +26,7 @@ const APP_ROUTES:Routes = [
 {path: 'miscompras', component: MiscomprasComponent},
 {path: 'miscompras/detalle/:id', component: DetalleComponent},
 {path: 'ReporteVentas', component: ReporteComponent},
-{path: '**',pathMatch:'full', component: NoencontradaComponent}
+{path: '**',pathMatch:'full', component: HomeComponent},
 
 ];
 

@@ -11,6 +11,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import {MiscomprasComponent} from './components/miscompras/miscompras.component'
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { NoencontradaComponent } from './components/noencontrada/noencontrada.component';
+import { ReporteComponent } from './components/reporte/reporte.component';
 
 const APP_ROUTES:Routes = [
 {path: 'home', component: HomeComponent},
@@ -24,6 +25,7 @@ const APP_ROUTES:Routes = [
 {path: 'perfil', component: PerfilComponent},
 {path: 'miscompras', component: MiscomprasComponent},
 {path: 'miscompras/detalle/:id', component: DetalleComponent},
+{path: 'ReporteVentas', component: ReporteComponent},
 {path: '**',pathMatch:'full', component: NoencontradaComponent}
 
 ];

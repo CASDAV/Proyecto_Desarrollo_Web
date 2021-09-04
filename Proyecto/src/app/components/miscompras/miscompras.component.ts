@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LicoresService } from '../../servicios/licores.service';
 import {Licor} from '../../servicios/product';
 import { Router } from '@angular/router';
-import {Usuario} from '../../servicios/usuario';
 
 
 @Component({

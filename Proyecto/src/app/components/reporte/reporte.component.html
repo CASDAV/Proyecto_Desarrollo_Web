@@ -1,0 +1,12 @@
+<h1>Reporte de Ventas</h1>
+<hr>
+<div class="container">
+    <ul class="list-group list-group-flush" *ngFor="let registro of reporte;  let i = index">
+        <li class="list-group-item flex-column align-items-start">
+            <h5 class="">Producto: {{registro.nProducto}}</h5>
+            <h5 class="">Usuario: {{registro.emUsuario}}</h5>
+            <p class="">Descripcion: {{registro.dProducto}}</p>
+            <small>Precio: {{registro.pProducto}}</small>
+        </li>
+    </ul>
+</div>

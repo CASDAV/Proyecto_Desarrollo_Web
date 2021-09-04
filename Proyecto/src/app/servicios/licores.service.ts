@@ -112,6 +112,10 @@ export class LicoresService {
       getCompra(idx: number){
         return this.us.compras[idx];
       }
+      
+      getRegistro(){
+        return this.registro;
+      }
 }
 
 

@@ -29,6 +29,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { MiscomprasComponent } from './components/miscompras/miscompras.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { NoencontradaComponent } from './components/noencontrada/noencontrada.component';
+import { ReporteComponent } from './components/reporte/reporte.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { NoencontradaComponent } from './components/noencontrada/noencontrada.co
     PerfilComponent,
     MiscomprasComponent,
     DetalleComponent,
-    NoencontradaComponent
+    NoencontradaComponent,
+    ReporteComponent
   ],
   imports: [
     BrowserModule,

@@ -21,9 +21,9 @@
 
           <div *ngSwitchCase = "'admin'">
           <hr>
-          <button [routerLink]="['change',i]">Modificar</button>
+          <button class="btn btn-outline-success" [routerLink]="['change',i]">Modificar</button>
           <hr>
-          <button (click)="onDelete(licor)">Eliminar</button>
+          <button class="btn btn-outline-danger" (click)="onDelete(licor)">Eliminar</button>
           <hr>
         </div>
         

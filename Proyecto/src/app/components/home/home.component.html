@@ -3,7 +3,9 @@
       <h1 class="display-3">DrinkFull</h1>
       <p class="lead">Esta es una aplicacion de venta de licores.</p>
     </div>
-    <div class="container">
-      <button [routerLink]='["/ReporteVentas"]' class="btn btn-outline-primary btn-block">Reporte de Ventas</button>
+    <div class="container" [ngSwitch]="tip()">
+      <div *ngSwitchCase = "true">
+        <button [routerLink]='["/ReporteVentas"]' class="btn btn-outline-primary btn-block">Reporte de Ventas</button>
+      </div>
     </div>
   </div>

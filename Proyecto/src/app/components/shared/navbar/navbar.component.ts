@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
     us.apellido='';
     us.email='';
     us.cont='';
+    us.compras=[];
     us.tipo="invitado";
 
     this._licoresService.joinUsuario(us);

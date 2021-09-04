@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LicoresService } from '../../servicios/licores.service';
+import {Usuario} from '../../servicios/usuario';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _licoresService: LicoresService) { }
 
   ngOnInit(): void {
   }
-
+  tip(){
+    if(this._licoresService.getUsuario().tipo=="admin"){
+      return true;
+    } 
+    else{
+      return false;
+    }
+  }
 }

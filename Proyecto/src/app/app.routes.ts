@@ -16,10 +16,10 @@ import { ReporteComponent } from './components/reporte/reporte.component';
 const APP_ROUTES:Routes = [
 {path: 'home', component: HomeComponent},
 {path: 'about', component: AboutComponent},
-{path: 'licores', component: LicoresComponent},
-{path: 'licores/trago/:id', component: TragoComponent},
+{path: 'productos', component: LicoresComponent},
+{path: 'productos/item/:id', component: TragoComponent},
 {path: 'add', component: AddComponent},
-{path: 'licores/change/:id', component: ChangeComponent},
+{path: 'productos/change/:id', component: ChangeComponent},
 {path: 'sesion', component: SesionComponent},
 {path: 'log', component: LogComponent},
 {path: 'perfil', component: PerfilComponent},

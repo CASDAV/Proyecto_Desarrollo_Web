@@ -29,6 +29,7 @@ pass: string='';
       us.email = x.email;
       us.cont = x.cont;
       us.tipo = x.tipo;
+
       this._licoresService.joinUsuario(us);
       this.router.navigate(['/home']);
     }

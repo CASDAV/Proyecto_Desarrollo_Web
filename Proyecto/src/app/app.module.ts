@@ -30,6 +30,7 @@ import { MiscomprasComponent } from './components/miscompras/miscompras.componen
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { NoencontradaComponent } from './components/noencontrada/noencontrada.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,12 +49,14 @@ import { ReporteComponent } from './components/reporte/reporte.component';
     MiscomprasComponent,
     DetalleComponent,
     NoencontradaComponent,
-    ReporteComponent
+    ReporteComponent,
+    
   ],
   imports: [
     BrowserModule,
     APP_ROUTING,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     LicoresService

@@ -34,7 +34,13 @@ export class ChangeComponent implements OnInit {
     this._licoresService.getLicor(this.activateRoute.snapshot.params.id).nombre = this.nombre;
     this._licoresService.getLicor(this.activateRoute.snapshot.params.id).bio = this.bio;
     this._licoresService.getLicor(this.activateRoute.snapshot.params.id).precio = this.precio;
-
+    
+var ch ={
+  "id":null,
+  "name":this.nombre,
+  "description":this.bio,
+  "price":this.precio
+}
     this.router.navigate(['/licores']);
  
    

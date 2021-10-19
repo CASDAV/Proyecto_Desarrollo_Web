@@ -14,6 +14,7 @@ export class SesionComponent implements OnInit {
   email: string='';
   cont: string='';
   tipo:string='';
+  fecha: string='';
   constructor(private _licoresService: LicoresService,private router:Router) { }
 
   ngOnInit(): void {
@@ -26,7 +27,19 @@ export class SesionComponent implements OnInit {
     usua.cont = this.cont;
     usua.tipo = "usuario"
 
-    this._licoresService.addU(usua);
+    var usuario = {
+      "id" : null,
+      "firstName" : this.nombre,
+      "lastName" : this.apellido,
+      "birthDate" : this.fecha,
+      "email" : this.email,
+      "password" : this.cont,
+      "userType" : "CUSTOMER"
+    
+    
+    }
+
+//    this._licoresService.addU(usua);
     
     this.router.navigate(['/home']);
   }

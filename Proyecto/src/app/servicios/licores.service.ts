@@ -1,10 +1,60 @@
 import{Injectable} from '@angular/core';
 import {Licor} from './product';
 import {Usuario} from './usuario';
+import {HttpClient} from '@angular/common/http';
+import { throwError } from 'rxjs';
 import {Orden} from './orden'
+import {Configure} from './config'
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class LicoresService {
+  constructor(private http: HttpClient) {
+  }
+
+ 
+  crearProducto(datosEnviar:any) {
+
+    let url = `${Configure.getIpPeticiones()}`;
+
+
+
+    return this.http.post(
+        url,datosEnviar).pipe(
+            map(this.extractData),
+            catchError(this.handleError),
+        );
+}
+consultarProductos(datosEnviar: any,tam:any) {
+  return this.http.get(
+      '${Configure.getIpPeticiones()}products/$(datosEnviar)/$(tam)').pipe(
+          map(this.extractData),
+          catchError(this.handleError),
+      );
+}
+
+    /* FUNCIONES GENERALES */
+
+    private extractData(res: Response | any) {
+      const body = res;
+      return body || {};
+  }
+
+  private handleError(error: Response | any) {
+      let errMsg: string;
+      if (error instanceof Response) {
+          const err = error || '';
+          errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+      } else {
+          errMsg = error.message ? error.message : error.toString();
+      }
+
+      return throwError(errMsg);
+  }
+
+
+
+ 
   us = new Usuario();
   registro: Orden[] = [];
 
@@ -73,10 +123,6 @@ export class LicoresService {
 ];
 
 
-
-
-    constructor(){}
-
     getLicores(){
         return this.licores;
     }
@@ -140,6 +186,7 @@ export class LicoresService {
       getRegistro(){
         return this.registro;
       }
+
 }
 
 

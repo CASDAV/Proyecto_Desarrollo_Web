@@ -14,7 +14,7 @@ export class LicoresComponent implements OnInit {
   us = new Usuario();
 
  licores:Licor[]=[];
- 
+ tam:any = 0; 
   constructor(private _licoresService: LicoresService,
     private router:Router) {
 
@@ -22,7 +22,11 @@ export class LicoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.licores = this._licoresService.getLicores();
-  }
+   
+   
+
+}
+  
   
   onDelete(lic: Licor):void{
     this.licores = this._licoresService.onDelete(lic);

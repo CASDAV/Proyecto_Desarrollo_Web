@@ -10,13 +10,15 @@ import { Router } from '@angular/router';
 })
 export class LogComponent implements OnInit {
   email:string = '';
-pass: string='';
+  pass: string='';
   constructor(private _licoresService: LicoresService,private router:Router) { }
 
   ngOnInit(): void {
   }
   onSubmite(){
-    const us= new Usuario();
+ this.verificar(this.email,this.pass);
+ 
+    /*  const us= new Usuario();
     
     let x = this._licoresService.verificar(this.email,this.pass);
  
@@ -33,6 +35,24 @@ pass: string='';
       this._licoresService.joinUsuario(us);
       this.router.navigate(['/home']);
     }
-
+*/
 }
+
+verificar(corr:string, contraseña: string){
+this.email= "";
+this.pass="";
+
+  const datosLogin:any ={
+"correo":corr,
+"clav": contraseña  
+}
+this._licoresService.login(datosLogin).subscribe((resp: any)=>{
+  console.log("hola");
+  console.log(resp);
+  sessionStorage.setItem('token',resp.headers.get('Authorization'));
+  sessionStorage.setItem('correo',corr);
+  this.router.navigate(['/home']);
+})
+}
+
 }

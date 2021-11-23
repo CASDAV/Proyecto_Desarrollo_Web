@@ -12,48 +12,47 @@ export class LicoresService {
   constructor(private http: HttpClient) {
   }
 
+
+  login(datos: any){
+    return this.http.post('http://localhost:8080/login',datos,{observe:'response'})
+    .pipe(map(this.extractData),catchError(this.handleError))
+  }
  
-  crearProducto(datosEnviar:any) {
+ consultarProductos(pag:any, size:any){
+  let url = `${Configure.getIpPeticiones()}`;
 
-    let url = `${Configure.getIpPeticiones()}`;
+ 
+      url = url + '/p/${pag}/${size}';
 
 
-
-    return this.http.post(
-        url,datosEnviar).pipe(
-            map(this.extractData),
-            catchError(this.handleError),
-        );
-}
-consultarProductos(datosEnviar: any,tam:any) {
   return this.http.get(
-      '${Configure.getIpPeticiones()}products/$(datosEnviar)/$(tam)').pipe(
+      url).pipe(
           map(this.extractData),
           catchError(this.handleError),
       );
+ }
+
+ private extractData(res: Response | any) {
+  const body = res;
+  return body || {};
 }
 
+private handleError(error: Response | any) {
+  let errMsg: string;
+  if (error instanceof Response) {
+      const err = error || '';
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+  } else {
+      errMsg = error.message ? error.message : error.toString();
+  }
+
+  return throwError(errMsg);
+}
+
+
+
+
     /* FUNCIONES GENERALES */
-
-    private extractData(res: Response | any) {
-      const body = res;
-      return body || {};
-  }
-
-  private handleError(error: Response | any) {
-      let errMsg: string;
-      if (error instanceof Response) {
-          const err = error || '';
-          errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-      } else {
-          errMsg = error.message ? error.message : error.toString();
-      }
-
-      return throwError(errMsg);
-  }
-
-
-
  
   us = new Usuario();
   registro: Orden[] = [];

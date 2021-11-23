@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //Rutas
 import { APP_ROUTING } from './app.routes';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+// Interceptors
+import { AuthInterceptorService } from "./AuthInterceptorService";
 
 
 
@@ -59,7 +62,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    LicoresService
+    LicoresService,
+    AuthInterceptorService,
   ],
   bootstrap: [AppComponent]
 })

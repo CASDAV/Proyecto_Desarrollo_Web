@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //Rutas
 import { APP_ROUTING } from './app.routes';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 // Interceptors
 import { AuthInterceptorService } from "./AuthInterceptorService";
@@ -33,7 +33,7 @@ import { MiscomprasComponent } from './components/miscompras/miscompras.componen
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { NoencontradaComponent } from './components/noencontrada/noencontrada.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -63,7 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     LicoresService,
-    AuthInterceptorService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+    
   ],
   bootstrap: [AppComponent]
 })

@@ -13,7 +13,7 @@ import {Usuario} from '../../servicios/usuario';
 export class LicoresComponent implements OnInit {
   us = new Usuario();
 
- licores:Licor[]=[];
+ licores:any[]=[];
  tam:any = 0; 
   constructor(private _licoresService: LicoresService,
     private router:Router) {
@@ -21,15 +21,23 @@ export class LicoresComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.licores = this._licoresService.getLicores();
+     this._licoresService.consultarProductos(0,8).subscribe((respo:any)=>{
+    this.licores = respo.content;
+    console.log(respo);
+    })
    
    
 
 }
   
   
-  onDelete(lic: Licor):void{
-    this.licores = this._licoresService.onDelete(lic);
+  onDelete(lic: any):void{
+    this._licoresService.eliminarp(lic).subscribe(()=>{
+      console.log("eliminado con exito");
+    });
+    this._licoresService.consultarProductos(0,8).subscribe((respo:any)=>{
+      this.licores = respo.content;
+      })
     }
     tip(){
       this.us = this._licoresService.getUsuario();

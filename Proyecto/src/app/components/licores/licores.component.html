@@ -15,15 +15,15 @@
         
         <img class ="card-img-top img-fluid" [src]="licor.img" class="card-img-top" [alt]="licor.nombre">
         <div class="card-block">
-          <h5 class="card-title">{{licor.nombre}}</h5>
-          <p class="card-text">{{licor.bio}}</p>
-          <p class="card-text">{{licor.precio | currency}}</p>
+          <h5 class="card-title">{{licor.name}}</h5>
+          <p class="card-text">{{licor.description}}</p>
+          <p class="card-text">{{licor.price | currency}}</p>
 
           <div *ngSwitchCase = "'admin'">
           <hr>
-          <button class="btn btn-outline-success" [routerLink]="['change',i]">Modificar</button>
+          <button class="btn btn-outline-success" [routerLink]="['change',licor.id]">Modificar</button>
           <hr>
-          <button class="btn btn-outline-danger" (click)="onDelete(licor)">Eliminar</button>
+          <button class="btn btn-outline-danger" (click)="onDelete(licor.id)">Eliminar</button>
           <hr>
         </div>
         

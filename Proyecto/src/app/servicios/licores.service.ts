@@ -17,19 +17,36 @@ export class LicoresService {
     return this.http.post('http://localhost:8080/login',datos,{observe:'response'})
     .pipe(map(this.extractData),catchError(this.handleError))
   }
+
+  ver(datos:any){
+    return this.http.get('http://localhost:8080/Users/info?email=testAdmin@test.com').pipe(map(this.extractData),catchError(this.handleError))
+  }
  
- consultarProductos(pag:any, size:any){
-  let url = `${Configure.getIpPeticiones()}`;
+ consultarProductos(pag: any , size:any){
 
- 
-      url = url + '/p/${pag}/${size}';
-
-
-  return this.http.get(
-      url).pipe(
+  return this.http.get(`http://localhost:8080/products/${pag}/${size}`).pipe(
           map(this.extractData),
           catchError(this.handleError),
       );
+ }
+
+ crearProducto(prod:any){
+  return this.http.post('http://localhost:8080/products/create',prod).pipe(
+    map(this.extractData),
+    catchError(this.handleError),
+);
+ }
+ modificarProducto(prod:any,id:any){
+  return this.http.put(`http://localhost:8080/products/update/${id}`,prod).pipe(
+    map(this.extractData),
+    catchError(this.handleError),
+);
+ }
+ eliminarp(prod:any){
+   return this.http.delete(`http://localhost:8080/products/delete/${prod}`).pipe(
+    map(this.extractData),
+    catchError(this.handleError),
+);
  }
 
  private extractData(res: Response | any) {

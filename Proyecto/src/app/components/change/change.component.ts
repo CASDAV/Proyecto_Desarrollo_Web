@@ -31,16 +31,21 @@ export class ChangeComponent implements OnInit {
   ngOnInit(): void {
   }
   chg():void{
-    this._licoresService.getLicor(this.activateRoute.snapshot.params.id).nombre = this.nombre;
-    this._licoresService.getLicor(this.activateRoute.snapshot.params.id).bio = this.bio;
-    this._licoresService.getLicor(this.activateRoute.snapshot.params.id).precio = this.precio;
+    //this._licoresService.getLicor(this.activateRoute.snapshot.params.id).nombre = this.nombre;
+    //this._licoresService.getLicor(this.activateRoute.snapshot.params.id).bio = this.bio;
+    //this._licoresService.getLicor(this.activateRoute.snapshot.params.id).precio = this.precio;
     
-var ch ={
+    const datosP:any={
   "id":null,
   "name":this.nombre,
   "description":this.bio,
-  "price":this.precio
+  "price":this.precio,
+  "image":null
 }
+
+this._licoresService.modificarProducto(datosP,this.p).subscribe(()=>{
+  console.log("Modificado con exito");
+})
     this.router.navigate(['/licores']);
  
    

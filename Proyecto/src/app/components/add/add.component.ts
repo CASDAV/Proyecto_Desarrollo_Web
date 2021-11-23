@@ -23,15 +23,18 @@ export class AddComponent implements OnInit {
     licor.nombre = this.nombre;
     licor.bio = this.bio;
     licor.precio = this.precio;
-    
-    var lic = {
+    const datosUs:any ={
+      "id":null,
       "name":this.nombre,
       "description":this.bio,
       "price":this.precio,
-      "image":null
-    }
+      "image":null 
+      }
+    
 
-    //this._licoresService.addP(licor);
+    this._licoresService.crearProducto(datosUs).subscribe(()=>{
+      console.log("exito");
+    });
     this.router.navigate(['/licores']);
   }
 

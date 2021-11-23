@@ -30,6 +30,10 @@ export class NavbarComponent implements OnInit {
     us.compras=[];
     us.tipo="invitado";
 
+    sessionStorage.clear();
+  
+  
+
     this._licoresService.joinUsuario(us);
     this.router.navigate(['/home']);
   }
